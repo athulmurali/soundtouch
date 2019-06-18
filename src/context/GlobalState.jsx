@@ -13,7 +13,10 @@ export default class GlobalState extends React.Component {
 
     functions = {
         updateIp: (ip,cb) => this.setState({ip},cb),
-        updateDeviceInfo: (deviceInfo,cb) => this.setState({deviceInfo}, cb)
+        updateDeviceInfo: (deviceInfo,cb) => {
+            console.log(deviceInfo)
+            this.setState({deviceInfo}, cb)
+        }
     }
 
 
