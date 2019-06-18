@@ -46,25 +46,16 @@ export default class Timer extends React.Component {
         this.setState({currentVal: ((this.state.currentVal + this.updateEveryMs) % this.totalTimeMs)});
     };
 
-    startTimer = () => {
-        this.setState({start: true})
-
-    }
+    startTimer = () => this.setState({start: true});
 
     render() {
         const currentVal = this.state.currentVal;
-
         const remainingPercentage = Math.ceil((this.totalTimeMs - currentVal) / this.totalTimeMs * 100);
-
         return <div style={{textAlign: 'center'}}>
-            <IPConfig/>
-
+            {/*<IPConfig/>*/}
             <button onClick={this.startTimer}>Start</button>
-
             {this.state.start && <CircularProgressbar value={remainingPercentage} text={`${remainingPercentage}`}/>}
         </div>
     }
-
-
 }
 
